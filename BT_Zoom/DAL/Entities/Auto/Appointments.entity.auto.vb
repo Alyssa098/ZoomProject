@@ -12,7 +12,7 @@ Public MustInherit Class BTAppointmentsBase(Of TTable As {BTAppointmentsTableBas
     Protected Sub New()
         MyBase.New()
 
-        RegisterFields(_fiAppointmentId, _fiName, _fiAddedByID, _fiAddedByDate, _fiUpdatedByID, _fiUpdatedByDate)
+        RegisterFields(_fiAppointmentId, _fiName, _fiAddedByID, _fiAddedByDate, _fiUpdatedByID, _fiUpdatedByDate, _fiAccountId, _fiAppointmentNotes, _fiZoomAppointmentId)
 
     End Sub
 
@@ -75,6 +75,30 @@ Public MustInherit Class BTAppointmentsBase(Of TTable As {BTAppointmentsTableBas
         Get
             _fiUpdatedByDate.CreateMeIfNecessary()
             Return DirectCast(_fiUpdatedByDate.Field, IBTSqlDateTime)
+        End Get
+    End Property
+
+    Protected _fiAccountId As ISqlFieldInfo = New SqlFieldInfo() With {.Column = MyBase.Table.AccountId, .FieldName = "AccountId", .CreateField = AddressOf CreateBTSqlInt32}
+    Public ReadOnly Property AccountId As IBTSqlInt32
+        Get
+            _fiAccountId.CreateMeIfNecessary()
+            Return DirectCast(_fiAccountId.Field, IBTSqlInt32)
+        End Get
+    End Property
+
+    Protected _fiAppointmentNotes As ISqlFieldInfo = New SqlFieldInfo() With {.Column = MyBase.Table.AppointmentNotes, .FieldName = "AppointmentNotes", .CreateField = AddressOf CreateBTSqlString}
+    Public ReadOnly Property AppointmentNotes As IBTSqlString
+        Get
+            _fiAppointmentNotes.CreateMeIfNecessary()
+            Return DirectCast(_fiAppointmentNotes.Field, IBTSqlString)
+        End Get
+    End Property
+
+    Protected _fiZoomAppointmentId As ISqlFieldInfo = New SqlFieldInfo() With {.Column = MyBase.Table.ZoomAppointmentId, .FieldName = "ZoomAppointmentId", .CreateField = AddressOf CreateBTSqlInt32}
+    Public ReadOnly Property ZoomAppointmentId As IBTSqlInt32
+        Get
+            _fiZoomAppointmentId.CreateMeIfNecessary()
+            Return DirectCast(_fiZoomAppointmentId.Field, IBTSqlInt32)
         End Get
     End Property
 
