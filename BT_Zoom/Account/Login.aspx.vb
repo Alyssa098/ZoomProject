@@ -9,4 +9,8 @@
             RegisterHyperLink.NavigateUrl &= "?ReturnUrl=" & returnUrl
         End If
     End Sub
+
+    Protected Sub Unnamed6_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

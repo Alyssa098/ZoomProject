@@ -12,4 +12,13 @@ Option Explicit On
 
 
 Partial Public Class _Default
+    
+    '''<summary>
+    '''TestButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TestButton As Global.System.Web.UI.WebControls.Button
 End Class
