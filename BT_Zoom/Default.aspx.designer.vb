@@ -14,6 +14,69 @@ Option Explicit On
 Partial Public Class _Default
     
     '''<summary>
+    '''TopicTextBox control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TopicTextBox As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''RequiredFieldValidator2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''MeetingCalendar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents MeetingCalendar As Global.System.Web.UI.WebControls.Calendar
+    
+    '''<summary>
+    '''HourTextBox control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HourTextBox As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''MinTextBox control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents MinTextBox As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''SecTextBox control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SecTextBox As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''MeetingTimeTextBox control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents MeetingTimeTextBox As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''TestButton control.
     '''</summary>
     '''<remarks>
