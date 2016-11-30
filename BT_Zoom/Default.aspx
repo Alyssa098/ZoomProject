@@ -55,5 +55,8 @@
     <asp:Button ID="TestButton" runat="server" Text="Test" />
     </li>
     </ol>
-    <ol><li><asp:Button ID="Button1" runat="server" Text="Button" CausesValidation="false"/></li></ol>
+    <ol><li>
+        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+        </li><li>
+        <asp:Button ID="Button1" runat="server" Text="Button" CausesValidation="false"/></li></ol>
 </asp:Content>
