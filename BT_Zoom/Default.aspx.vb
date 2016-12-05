@@ -129,16 +129,16 @@ Public Class _Default
             End Select
         Next
 
+
         Dim SQL As New SQLControl
-        Dim SelectedName As String = DropDownList1.SelectedValue.ToString
-        SQL.AddParam("@name", SelectedName)
-        SQL.ExecQuery("Select AppointmentDate from Appointments where Name = 'New Account Name'")
-        DropDownList2.DataSource = SQL.DBTB
+        SQL.ExecQuery("select * from Accounts")
 
 
     End Sub
 
     Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
+        Dim SQL As New SQLControl
+        Dim SelectedName As String = DropDownList1.SelectedValue.ToString
 
     End Sub
 <<<<<<< HEAD
