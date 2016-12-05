@@ -41,6 +41,7 @@
     </li>
     </ol>
     <ol><li>
+<<<<<<< HEAD
         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Name">
         </asp:DropDownList>
         <asp:DropDownList ID="DropDownList2" runat="server">
@@ -48,4 +49,9 @@
         <asp:Button ID="Button1" runat="server" Text="Update Meeting List" CausesValidation="false"/>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UnoZoomCapstoneConnectionString %>" SelectCommand="SELECT [Name] FROM [Accounts]"></asp:SqlDataSource>
         </li></ol>
+=======
+        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+        </li><li>
+        <asp:Button ID="Button1" runat="server" Text="Button" CausesValidation="false"/></li></ol>
+>>>>>>> origin/master
 </asp:Content>

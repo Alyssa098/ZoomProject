@@ -113,6 +113,7 @@ Partial Public Class _Default
     Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
+<<<<<<< HEAD
     '''DropDownList2 control.
     '''</summary>
     '''<remarks>
@@ -122,6 +123,8 @@ Partial Public Class _Default
     Protected WithEvents DropDownList2 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
+=======
+>>>>>>> origin/master
     '''Button1 control.
     '''</summary>
     '''<remarks>
