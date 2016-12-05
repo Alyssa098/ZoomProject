@@ -30,9 +30,9 @@
     
        <h4>Meeting Time</h4> 
 
-    <asp:TextBox ID="HourTextBox" runat="server" Width="16px"></asp:TextBox>
-        :<asp:TextBox ID="MinTextBox" runat="server" Width="16px"></asp:TextBox>
-        :<asp:TextBox ID="SecTextBox" runat="server" Width="16px"></asp:TextBox>
+    <asp:TextBox ID="HourTextBox" runat="server" Width="32px"></asp:TextBox>
+        :<asp:TextBox ID="MinTextBox" runat="server" Width="32px"></asp:TextBox>
+        :<asp:TextBox ID="SecTextBox" runat="server" Width="32px"></asp:TextBox>
     (24 hour format)
         <p>&nbsp;</p>
     <h4>Meeting Time in UTC:<asp:TextBox ID="MeetingTimeTextBox" runat="server"></asp:TextBox>
