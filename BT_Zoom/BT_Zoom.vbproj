@@ -41,7 +41,15 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
@@ -293,6 +301,7 @@
     <Compile Include="Account\Register.aspx.designer.vb">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SQLControl.vb" />
     <Compile Include="DALSamples\DalSample.aspx.designer.vb">
       <DependentUpon>DalSample.aspx</DependentUpon>
     </Compile>
@@ -356,8 +365,8 @@
     <Compile Include="DAL\Tables\Custom\Appointments.table.custom.vb" />
     <Compile Include="DAL\Tables\Custom\Accounts.table.custom.vb" />
     <Compile Include="Default.aspx.vb">
-      <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>

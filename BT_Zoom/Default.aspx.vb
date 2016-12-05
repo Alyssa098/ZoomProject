@@ -1,5 +1,11 @@
-﻿Imports System.IO
+﻿Imports System.Data.SqlClient
+Imports System.Data.Sql
+Imports System.IO
 Imports System.Net
+Imports Newtonsoft.Json
+Imports Newtonsoft.Json.Linq
+Imports System.Activities.Expressions
+
 Public Class _Default
     Inherits Page
 
@@ -9,10 +15,6 @@ Public Class _Default
 
     Protected Sub TestButton_Click(sender As Object, e As EventArgs) Handles TestButton.Click
 
-        If Not IsNumeric(HourTextBox.Text) Or Not IsNumeric(MinTextBox.Text) Or Not IsNumeric(SecTextBox.Text) Then
-
-
-        End If
 
         Dim request As WebRequest = WebRequest.Create(New Uri("https://api.zoom.us/v1/meeting/create"))
         Dim key = "za1FM1xWS46_Q-RYf1uWVQ"
@@ -46,6 +48,38 @@ Public Class _Default
             Response.Write(sResponse)
         End Using
 
+        Dim ser As JObject = JObject.Parse(sResponse)
+
+        Dim ZoomAppointmentId As String = ser("id")
+
+        Dim SQL As New SQLControl
+
+        Dim Name As String = NameBox.Text.ToString
+        Dim query As String = "select accountId from accounts where name = " + "'" + Name + "'"
+        SQL.ExecQuery(query)
+        Dim accountId As String
+        Dim qnote As String = TopicTextBox.Text
+
+        For Each r As DataRow In SQL.DBTB.Rows
+            accountId = r("accountId")
+        Next
+        Dim qtime As String = CStr(MeetingCalendar.SelectedDate.Year) + "-" + CStr(MeetingCalendar.SelectedDate.Month) + "-" + CStr(MeetingCalendar.SelectedDate.Day) + " " + HourTextBox.Text + ":" + MinTextBox.Text + ":" + SecTextBox.Text
+
+        ' MsgBox(ZoomAppointmentId)
+        SQL.AddParam("@Name", Name)
+        SQL.AddParam("@AccountID", accountId)
+        SQL.AddParam("@AppointmentDate", qtime)
+        SQL.AddParam("@AppointmentNotes", qnote)
+        SQL.AddParam("@ZoomAppointmentId", ZoomAppointmentId)
+        SQL.ExecQuery("insert into Appointments ( Name, AccountID, AppointmentDate, AppointmentNotes, ZoomAppointmentId, AddedByDate, UpdatedByDate)" &
+            "VALUES (@name,@AccountID , @AppointmentDate, @AppointmentNotes, @ZoomAppointmentId,GETDATE(), GETDATE());")
+
+        'SQL.ExecQuery(query)
+
+
+
+
+
     End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -77,6 +111,34 @@ Public Class _Default
 
             Response.Write(sResponse)
         End Using
+        Dim ser As JObject = JObject.Parse(sResponse)
+        Dim info As List(Of JToken) = ser.Children().ToList
+        Dim output As String = ""
+
+        For Each item As JProperty In info
+            item.CreateReader()
+            Select Case item.Name
+                Case "meetings"
+                    For Each meetings As JObject In item.Values
+                        Dim ti As String = meetings("start_time")
+                        Dim topic As String = meetings("topic")
+                        Dim meetingId As String = meetings("id")
+                        output += topic + vbTab + ti + vbTab + meetingId + vbCrLf
+
+                    Next
+            End Select
+        Next
+
+
+        Dim SQL As New SQLControl
+        SQL.ExecQuery("select * from Accounts")
+
+
     End Sub
 
+    Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
+        Dim SQL As New SQLControl
+        Dim SelectedName As String = DropDownList1.SelectedValue.ToString
+
+    End Sub
 End Class
