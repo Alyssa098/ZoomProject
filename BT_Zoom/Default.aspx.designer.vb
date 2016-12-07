@@ -113,7 +113,6 @@ Partial Public Class _Default
     Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-<<<<<<< HEAD
     '''DropDownList2 control.
     '''</summary>
     '''<remarks>
@@ -123,8 +122,15 @@ Partial Public Class _Default
     Protected WithEvents DropDownList2 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-=======
->>>>>>> origin/master
+    '''SqlDataSource2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
     '''Button1 control.
     '''</summary>
     '''<remarks>
