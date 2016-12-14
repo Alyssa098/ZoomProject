@@ -37,6 +37,7 @@
     <p>
         <asp:Button ID="UpdateButton" runat="server" Text="Update" />
         <asp:Button ID="DeleteButton" runat="server" Text="Delete" CausesValidation="False" ValidateRequestMode="Disabled" />
+        <asp:Button ID="Button1" runat="server" Text="Playback"  CausesValidation="False"/>
     </p>
     <p>
         &nbsp;</p>

@@ -23,13 +23,13 @@ Partial Public Class _Default
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''NameBox control.
+    '''NameDropDownList control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents NameBox As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents NameDropDownList As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''TopicTextBox control.
@@ -86,15 +86,6 @@ Partial Public Class _Default
     Protected WithEvents SecTextBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''MeetingTimeTextBox control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents MeetingTimeTextBox As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
     '''TestButton control.
     '''</summary>
     '''<remarks>
@@ -129,6 +120,15 @@ Partial Public Class _Default
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Button2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Button1 control.
